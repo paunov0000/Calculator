@@ -7,12 +7,12 @@ export default function Calculator() {
 	const [numbers, setNumbers] = useState(0);
 
 	return (
-		<>
+		<div className='text-4xl'>
 			<Display numbers={numbers}></Display>
 			<Keypad
 				numbers={numbers}
 				onButtonClick={setNumbers}
 			></Keypad>
-		</>
+		</div>
 	);
 }
