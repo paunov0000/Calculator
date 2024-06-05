@@ -4,12 +4,15 @@ import { useState } from 'react';
 import Keypad from './Keypad';
 
 export default function Calculator() {
-	const [numbers, setNumbers] = useState(222);
+	const [numbers, setNumbers] = useState(0);
 
 	return (
 		<>
 			<Display numbers={numbers}></Display>
-			<Keypad></Keypad>
+			<Keypad
+				numbers={numbers}
+				onButtonClick={setNumbers}
+			></Keypad>
 		</>
 	);
 }
