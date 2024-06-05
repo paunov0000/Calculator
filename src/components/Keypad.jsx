@@ -15,6 +15,15 @@ export default function Keypad() {
 			<div>
 				<p>/</p>
 			</div>
+
+	function handleOnClick(textContent) {
+		if (numbers !== 0) {
+			return onButtonClick(parseInt(numbers + textContent));
+		} else {
+			onButtonClick(parseInt(textContent));
+		}
+	}
+
 			<div>
 				<p>7</p>
 			</div>
