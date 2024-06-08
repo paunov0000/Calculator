@@ -95,7 +95,7 @@ export default function Keypad({ numbers, onButtonClick }) {
 					totalSum = sum / numbers;
 					break;
 				case '+':
-					totalSum = sum + numbers;
+					totalSum = parseFloat(sum) + parseFloat(numbers);
 					break;
 				default:
 					break;
