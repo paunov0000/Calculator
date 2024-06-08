@@ -55,7 +55,10 @@ export default function Keypad({ numbers, onButtonClick }) {
 		//Add the  +-=*/ operations each on the end of the row
 	}
 	rows.push(
-		<div className='col-span-2'>
+		<div
+			onClick={(e) => handleDigitClick(e.currentTarget.textContent)}
+			className='col-span-2'
+		>
 			<p>0</p>
 		</div>,
 		<div onClick={(e) => handleDigitClick(e.currentTarget.textContent)}>
