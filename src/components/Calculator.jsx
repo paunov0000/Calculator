@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Keypad from './Keypad';
 
 export default function Calculator() {
-	const [numbers, setNumbers] = useState(0);
+	const [numbers, setNumbers] = useState('');
 
 	return (
 		<div className='text-4xl'>
