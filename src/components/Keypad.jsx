@@ -58,7 +58,7 @@ export default function Keypad({ numbers, onButtonClick }) {
 		<div className='col-span-2'>
 			<p>0</p>
 		</div>,
-		<div>
+		<div onClick={(e) => handleDigitClick(e.currentTarget.textContent)}>
 			<p>.</p>
 		</div>,
 		<div onClick={(e) => handleOperatorClick(e.currentTarget.textContent)}>
@@ -67,12 +67,12 @@ export default function Keypad({ numbers, onButtonClick }) {
 	);
 
 	function handleDigitClick(textContent) {
-		console.log(operator);
-		if (numbers !== 0) {
-			onButtonClick(parseInt(numbers + textContent));
+		if (!textContent.includes('.') && !numbers.toString().includes('.')) {
+			onButtonClick(parseFloat(numbers + textContent));
 		} else {
-			onButtonClick(parseInt(textContent));
+			onButtonClick(numbers + textContent);
 		}
+		// onButtonClick(parseInt(textContent));
 	}
 
 	function handleOperatorClick(clickedOperator) {
