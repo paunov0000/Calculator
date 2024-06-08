@@ -79,6 +79,8 @@ export default function Keypad({ numbers, onButtonClick }) {
 
 		const newNumber = parseFloat(numbers + textContent);
 
+		console.log(textContent);
+
 		onButtonClick(
 			containsDot || currentNumberContainsDot
 				? numbers + textContent
@@ -95,8 +97,35 @@ export default function Keypad({ numbers, onButtonClick }) {
 			let totalSum = 0;
 			switch (operator) {
 				case '*':
-					totalSum = sum * numbers;
-					totalSum = Math.round((totalSum + Number.EPSILON) * 100) / 100;
+					console.log(
+						numbers.toString().split('.')[
+							numbers.toString().split('.').length - 1
+						].length
+					);
+					console.log(
+						sum.toString().split('.')[sum.toString().split('.').length - 1]
+							.length
+					);
+					const digitsAfterDecimal =
+						numbers.toString().split('.')[
+							numbers.toString().split('.').length - 1
+						].length === 1
+							? sum.toString().split('.')[sum.toString().split('.').length - 1]
+									.length
+							: numbers.toString().split('.')[
+									numbers.toString().split('.').length - 1
+							  ].length;
+
+					console.log(digitsAfterDecimal);
+
+					if (digitsAfterDecimal < 3) {
+						totalSum =
+							Math.round(
+								(parseFloat(sum) * parseFloat(numbers) + Number.EPSILON) * 100 //TODO: FIX 0.0003 * 2
+							) / 100;
+					} else {
+						totalSum = parseFloat(sum) * parseFloat(numbers);
+					}
 					break;
 
 				case '-':
