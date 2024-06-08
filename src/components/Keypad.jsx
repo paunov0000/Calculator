@@ -85,6 +85,7 @@ export default function Keypad({ numbers, onButtonClick }) {
 			switch (operator) {
 				case '*':
 					totalSum = sum * numbers;
+					totalSum = Math.round((totalSum + Number.EPSILON) * 100) / 100;
 					break;
 
 				case '-':
