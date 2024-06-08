@@ -146,5 +146,5 @@ export default function Keypad({ numbers, onButtonClick }) {
 		}
 	}
 
-	return <div className='grid grid-cols-4 grid-rows-5'>{rows}</div>;
+	return <>{rows}</>;
 }
