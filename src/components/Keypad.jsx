@@ -67,12 +67,20 @@ export default function Keypad({ numbers, onButtonClick }) {
 	);
 
 	function handleDigitClick(textContent) {
-		if (!textContent.includes('.') && !numbers.toString().includes('.')) {
-			onButtonClick(parseFloat(numbers + textContent));
-		} else {
-			onButtonClick(numbers + textContent);
+		const containsDot = textContent.includes('.');
+		const currentNumberContainsDot = numbers.toString().includes('.');
+
+		if (containsDot && currentNumberContainsDot) {
+			return;
 		}
-		// onButtonClick(parseInt(textContent));
+
+		const newNumber = parseFloat(numbers + textContent);
+
+		onButtonClick(
+			containsDot || currentNumberContainsDot
+				? numbers + textContent
+				: newNumber
+		);
 	}
 
 	function handleOperatorClick(clickedOperator) {
