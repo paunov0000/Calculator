@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.key {
+		@apply rounded-full flex items-center justify-center cursor-pointer select-none;
+	}
+
+	.key--main {
+		@apply bg-zinc-700;
+	}
+
+	.key--main-operations {
+		@apply bg-orange-400;
+	}
+
+	.key--secondary-operations {
+		@apply bg-gray-500 text-black;
+	}
+}
+
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
