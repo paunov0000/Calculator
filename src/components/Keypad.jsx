@@ -9,28 +9,28 @@ export default function Keypad({ numbers, onButtonClick }) {
 	let number = 9;
 	const symbols = [
 		<div
-			className='bg-orange-400 rounded-full py-0.5 px-0.5'
+			className='bg-orange-400 rounded-full flex items-center justify-center'
 			onClick={(e) => handleOperatorClick(e.currentTarget.textContent)}
 		>
 			<p>×</p>
 		</div>,
 		<div
-			className='bg-orange-400 rounded-full py-0.5 px-0.5'
+			className='bg-orange-400 rounded-full flex items-center justify-center'
 			onClick={(e) => handleOperatorClick(e.currentTarget.textContent)}
 		>
-			<p className='inline align-sub'>-</p>
+			<p>-</p>
 		</div>,
 		<div
-			className='bg-orange-400 rounded-full py-0.5 px-0.5'
+			className='bg-orange-400 rounded-full flex items-center justify-center'
 			onClick={(e) => handleOperatorClick(e.currentTarget.textContent)}
 		>
-			<p className='inline align-sub'>+</p>
+			<p>+</p>
 		</div>,
 	];
 	rows.push(
 		<>
 			<div
-				className='bg-gray-500 text-black rounded-full py-0.5 px-0.5'
+				className='bg-gray-500 text-black rounded-full flex items-center justify-center'
 				onClick={() => {
 					setOperator(null);
 					onButtonClick(0);
@@ -38,17 +38,17 @@ export default function Keypad({ numbers, onButtonClick }) {
 			>
 				<p className=''>AC</p>
 			</div>
-			<div className='bg-gray-500 text-black rounded-full py-0.5 px-0.5'>
+			<div className='bg-gray-500 text-black rounded-full flex items-center justify-center'>
 				<p>+/-</p>
 			</div>
-			<div className='bg-gray-500 text-black rounded-full py-0.5 px-0.5'>
+			<div className='bg-gray-500 text-black rounded-full flex items-center justify-center'>
 				<p>%</p>
 			</div>
 			<div
-				className='bg-orange-400 rounded-full py-0.5 px-0.5'
+				className='bg-orange-400 rounded-full flex items-center justify-center'
 				onClick={(e) => handleOperatorClick(e.currentTarget.textContent)}
 			>
-				<p className='inline align-sub'>÷</p>
+				<p>÷</p>
 			</div>
 		</>
 	);
@@ -59,7 +59,7 @@ export default function Keypad({ numbers, onButtonClick }) {
 			numStartFrom++;
 			cols.push(
 				<div
-					className='bg-zinc-700 rounded-full py-0.5 px-0.5'
+					className='bg-zinc-700 rounded-full flex items-center justify-center'
 					onClick={(e) => handleDigitClick(e.currentTarget.textContent)}
 				>
 					<p>{numStartFrom}</p>
@@ -73,21 +73,21 @@ export default function Keypad({ numbers, onButtonClick }) {
 	rows.push(
 		<div
 			onClick={(e) => handleDigitClick(e.currentTarget.textContent)}
-			className='col-span-2 bg-zinc-700 rounded-full py-0.5 px-0.5'
+			className='col-span-2 bg-zinc-700 rounded-full flex items-center justify-center'
 		>
 			<p className='right-[25%] relative'>0</p>
 		</div>,
 		<div
-			className='bg-zinc-700 rounded-full py-0.5 px-0.5'
+			className='bg-zinc-700 rounded-full flex items-center justify-center'
 			onClick={(e) => handleDigitClick(e.currentTarget.textContent)}
 		>
 			<p>.</p>
 		</div>,
 		<div
-			className='bg-orange-400 rounded-full py-0.5 px-0.5'
+			className='bg-orange-400 rounded-full flex items-center justify-center'
 			onClick={(e) => handleOperatorClick(e.currentTarget.textContent)}
 		>
-			<p className='inline align-sub'>=</p>
+			<p>=</p>
 		</div>
 	);
 
