@@ -12,7 +12,7 @@ export default function Keypad({ numbers, onButtonClick }) {
 			className='bg-orange-400 rounded-full py-0.5 px-0.5'
 			onClick={(e) => handleOperatorClick(e.currentTarget.textContent)}
 		>
-			<p className='inline align-sub'>*</p>
+			<p className='inline align-sub'>x</p>
 		</div>,
 		<div
 			className='bg-orange-400 rounded-full py-0.5 px-0.5'
@@ -48,7 +48,7 @@ export default function Keypad({ numbers, onButtonClick }) {
 				className='bg-orange-400 rounded-full py-0.5 px-0.5'
 				onClick={(e) => handleOperatorClick(e.currentTarget.textContent)}
 			>
-				<p className='inline align-sub'>/</p>
+				<p className='inline align-sub'>÷</p>
 			</div>
 		</>
 	);
@@ -118,7 +118,7 @@ export default function Keypad({ numbers, onButtonClick }) {
 		} else {
 			let totalSum = 0;
 			switch (operator) {
-				case '*':
+				case 'x':
 					console.log(
 						numbers.toString().split('.')[
 							numbers.toString().split('.').length - 1
@@ -154,7 +154,7 @@ export default function Keypad({ numbers, onButtonClick }) {
 					totalSum = sum - numbers;
 					break;
 
-				case '/':
+				case '÷':
 					totalSum = sum / numbers;
 					break;
 				case '+':
