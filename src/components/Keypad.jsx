@@ -52,7 +52,14 @@ export default function Keypad({ numbers, onButtonClick, className }) {
 			>
 				<p>+/-</p>
 			</div>
-			<div className='key key--secondary-operations'>
+			<div
+				className='key key--secondary-operations'
+				onClick={() => {
+					sum === 0
+						? onButtonClick(numbers / 100)
+						: onButtonClick(sum * (numbers / 100));
+				}}
+			>
 				<p>%</p>
 			</div>
 			<div
