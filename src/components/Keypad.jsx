@@ -1,7 +1,7 @@
 import { parse } from 'postcss';
 import React, { useState } from 'react';
 
-export default function Keypad({ numbers, onButtonClick }) {
+export default function Keypad({ numbers, onButtonClick, className }) {
 	const [operator, setOperator] = useState(null);
 	const [sum, setSum] = useState(0);
 
@@ -165,5 +165,5 @@ export default function Keypad({ numbers, onButtonClick }) {
 		}
 	}
 
-	return <>{rows}</>;
+	return <div className={className}>{rows}</div>;
 }
