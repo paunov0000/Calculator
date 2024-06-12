@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			gridTemplateRows: {
-				calculator: 'repeat(6, minmax(50px, 1fr))',
+				calculator: 'repeat(5, minmax(50px, 1fr))',
 			},
 			gridTemplateColumns: {
 				calculator: 'repeat(4, minmax(50px, 1fr))',
