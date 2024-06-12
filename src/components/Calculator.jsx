@@ -7,7 +7,7 @@ export default function Calculator() {
 	const [numbers, setNumbers] = useState('');
 
 	return (
-		<div className='text-3xl grid grid-cols-calculator grid-rows-calculator gap-2.5'>
+		<div className='text-3xl grid grid-cols-calculator grid-rows-calculator gap-2.5 font-calculator'>
 			<Display numbers={numbers}></Display>
 			<Keypad
 				numbers={numbers}
