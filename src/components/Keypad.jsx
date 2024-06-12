@@ -5,6 +5,8 @@ export default function Keypad({ numbers, onButtonClick, className }) {
 	const [operator, setOperator] = useState(null);
 	const [sum, setSum] = useState(0);
 
+	let isNumberPositive = true;
+
 	const rows = [];
 	let number = 9;
 	const symbols = [
@@ -38,7 +40,15 @@ export default function Keypad({ numbers, onButtonClick, className }) {
 			>
 				<p className=''>AC</p>
 			</div>
-			<div className='key key--secondary-operations'>
+			<div
+				className='key key--secondary-operations'
+				onClick={() => {
+					isNumberPositive = !isNumberPositive;
+					if (isNumberPositive === false) {
+						onButtonClick(numbers * -1);
+					}
+				}}
+			>
 				<p>+/-</p>
 			</div>
 			<div className='key key--secondary-operations'>
