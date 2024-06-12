@@ -170,7 +170,6 @@ export default function Keypad({ numbers, onButtonClick, className }) {
 				default:
 					break;
 			}
-			setSum(totalSum);
 			onButtonClick(totalSum);
 		}
 	}
