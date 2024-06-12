@@ -101,8 +101,6 @@ export default function Keypad({ numbers, onButtonClick }) {
 
 		const newNumber = parseFloat(numbers + textContent);
 
-		console.log(textContent);
-
 		onButtonClick(
 			containsDot || currentNumberContainsDot
 				? numbers + textContent
