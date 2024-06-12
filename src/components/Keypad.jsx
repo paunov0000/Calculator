@@ -92,6 +92,9 @@ export default function Keypad({ numbers, onButtonClick }) {
 	);
 
 	function handleDigitClick(textContent) {
+		if (numbers.toString() === 'Infinity') {
+			return;
+		}
 		const containsDot = textContent.includes('.');
 		const currentNumberContainsDot = numbers.toString().includes('.');
 
@@ -109,6 +112,10 @@ export default function Keypad({ numbers, onButtonClick }) {
 	}
 
 	function handleOperatorClick(clickedOperator) {
+		if (numbers.toString() === 'Infinity') {
+			return;
+		}
+
 		if (clickedOperator !== '=') {
 			setSum(numbers);
 			setOperator(clickedOperator);
