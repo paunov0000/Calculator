@@ -9,6 +9,9 @@ export default {
 			gridTemplateColumns: {
 				calculator: 'repeat(4, minmax(50px, 1fr))',
 			},
+			fontFamily: {
+				calculator: ['Poppins', 'sans-serif'],
+			},
 		},
 	},
 	plugins: [],
