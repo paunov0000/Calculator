@@ -35,6 +35,7 @@ export default function Keypad({ numbers, onButtonClick, className }) {
 				className='key key--secondary-operations'
 				onClick={() => {
 					setOperator(null);
+					setSum(0);
 					onButtonClick(0);
 				}}
 			>
