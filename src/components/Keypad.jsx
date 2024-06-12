@@ -117,6 +117,9 @@ export default function Keypad({ numbers, onButtonClick }) {
 		}
 
 		if (clickedOperator !== '=') {
+			if (operator === clickedOperator) {
+				return;
+			}
 			setSum(numbers);
 			setOperator(clickedOperator);
 			onButtonClick(0);
