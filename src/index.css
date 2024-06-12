@@ -4,7 +4,7 @@
 
 @layer components {
 	.key {
-		@apply rounded-full flex items-center justify-center cursor-pointer select-none;
+		@apply rounded-full flex items-center justify-center cursor-pointer select-none hover:brightness-150 duration-300;
 	}
 
 	.key--main {
